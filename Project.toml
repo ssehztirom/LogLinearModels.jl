@@ -1,0 +1,6 @@
+authors = ["harald <binderh@uni-mainz.de>"]
+name = "LogLinearModels"
+uuid = "a6fe36b8-2c63-11e9-27e7-4748cfc3a0e4"
+version = "0.1.0"
+
+[deps]
