@@ -1,19 +1,16 @@
 function adjtab!(mval,margin,adjfactor,levelvec=(Int)[])
    if (length(levelvec) < length(size(mval)))
       for i=size(mval)[length(levelvec)+1]:-1:1
-         println(i)
-         println(levelvec)
          adjtab!(mval,margin,adjfactor,[levelvec...,i])
       end
    else
       adjcoord = copy(levelvec)
       adjcoord[margin] .= 1
-      println("main")
-      println(levelvec)
-      println(mval[levelvec...])
+      
+      
       mval[levelvec...] = mval[levelvec...] * adjfactor[adjcoord...]
    end
-   println("end")
+   
    mval
 end
 
