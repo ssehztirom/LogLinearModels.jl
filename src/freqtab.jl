@@ -42,11 +42,12 @@ function freqtab(x; fillzeros=false)
 end
 
 function freqtab(leveldata::LevelData; fillzeros=false)
+	# First, we generate a Vector of Matrices with increasing dimensionality
    tabs = Vector{Any}(undef,size(leveldata.data,2)-1)
    for i=1:length(tabs)
       tabs[i] = fill(0.0,leveldata.levelno[1:(i+1)]...)
    end
-
+	# then we fill the first 2d table with data
    filltab!(tabs[1],leveldata.data[:,1:2])
 
    if length(tabs) > 1
